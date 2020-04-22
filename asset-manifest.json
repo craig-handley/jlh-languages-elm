@@ -1,0 +1,15 @@
+{
+  "main.css": "/jlh-languages-elm/static/css/main.d65bd4f0.chunk.css",
+  "main.js": "/jlh-languages-elm/static/js/main.9f16f70e.chunk.js",
+  "main.js.map": "/jlh-languages-elm/static/js/main.9f16f70e.chunk.js.map",
+  "runtime~main.js": "/jlh-languages-elm/static/js/runtime~main.40fdaa82.js",
+  "runtime~main.js.map": "/jlh-languages-elm/static/js/runtime~main.40fdaa82.js.map",
+  "vendors~main.js": "/jlh-languages-elm/static/js/vendors~main.7aa09ec8.chunk.js",
+  "vendors~main.js.map": "/jlh-languages-elm/static/js/vendors~main.7aa09ec8.chunk.js.map",
+  "./service-worker.js": "/jlh-languages-elm/./service-worker.js",
+  "favicon.ico": "/jlh-languages-elm/favicon.ico",
+  "index.html": "/jlh-languages-elm/index.html",
+  "manifest.json": "/jlh-languages-elm/manifest.json",
+  "precache-manifest.5c14355cc0d6db43d6f39160a205fc37.js": "/jlh-languages-elm/precache-manifest.5c14355cc0d6db43d6f39160a205fc37.js",
+  "robots.txt": "/jlh-languages-elm/robots.txt"
+}
