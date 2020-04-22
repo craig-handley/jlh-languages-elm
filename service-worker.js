@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/jlh-languages-elm/precache-manifest.5c14355cc0d6db43d6f39160a205fc37.js"
+  "/jlh-languages-elm/precache-manifest.8dedbf8215ec3048e1e416d643a83eb5.js"
 );
 
 workbox.core.skipWaiting();
