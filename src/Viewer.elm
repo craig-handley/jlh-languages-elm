@@ -30,7 +30,9 @@ view session msg details =
     { title = details.title ++ Utils.genericTitle
     , body =
         [ viewHeader session
-        , Html.map msg <| div [ class "container", class "main", style "height" (String.fromInt (session.windowSize.height - headerHeight - footerHeight) ++ "px") ] details.body
+
+        --, Html.map msg <| div [ class "container", class "main", style "height" (String.fromInt (session.windowSize.height - headerHeight - footerHeight) ++ "px") ] details.body
+        , Html.map msg <| div [ class "container", class "main" ] details.body
         , viewFooter session
         ]
     }

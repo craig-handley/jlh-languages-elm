@@ -23,6 +23,8 @@ type alias Session =
         , email : String
         , facebook : String
         , phone : String
+        , tutoring_01 : String
+        , tutoring_02 : String
         }
     }
 

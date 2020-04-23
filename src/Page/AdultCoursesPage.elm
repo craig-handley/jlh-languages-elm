@@ -48,8 +48,10 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "elm-spa-boilerplate - Adult Courses Page" ]
-        , div [] [ text "A new page." ]
+        [ div [ class "content" ]
+            [ h1 [] [ text "Current Courses" ]
+            , div [] [ text "A new page." ]
+            ]
         ]
     }
 
@@ -58,5 +60,6 @@ view model =
 -- HELPERS
 
 
+toTitle : String
 toTitle =
-    "New Page"
+    "Adult Courses Page"

@@ -7,6 +7,8 @@ import logo from './img/jlh-languages.png';
 import email from './img/email.png';
 import facebook from './img/facebook.png';
 import phone from './img/phone.png';
+import tutoring_01 from './img/tutoring_01.png';
+import tutoring_02 from './img/tutoring_02.png';
 
 // CONFIG
 const storageName = "elm-spa-boilerplate" // key in localStorage
@@ -31,7 +33,9 @@ function generateFlags() {
       logo,
       email,
       facebook,
-      phone
+      phone,
+      tutoring_01,
+      tutoring_02
     }
   };
 }

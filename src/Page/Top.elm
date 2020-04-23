@@ -89,39 +89,25 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "elm-spa-boilerplate" ]
-        , div [ class "content" ]
-            [ -- Intro and features
-              div [] [ text "A simple, no-frills boilerplate for creating delightful Single Page Applications (SPAs) in Elm. Everything you need to get started with no extra clutter. Just clone, compile, and get right to coding!" ]
-            , div [] [ text "Some highlights of this boilerplate:" ]
-            , highlights
-
-            -- Valid links
-            , div [] [ text "Here's some links to try out the client-side routing. Be sure to try using your browser's Back and Forward buttons, and refresh the page anytime!" ]
-            , ul [] [ viewLink "/pageone", viewLink "/pagewithsubpage/subpage-name", viewLink "/pagewithsubpage/adpoifjawef" ]
-
-            -- Invalid links demonstrating 404 redirecting (assuming the server is set up to redirect 404 to index.html)
-            , div [] [ text "You can handle 404 errors however you'd like - for example, rendering a static page, or routing to the home page. I chose to show a static 404 page - Here's a bunch of links that route there:" ]
-            , ul [] [ viewLink "/doesnotexist", viewLink "/invalidpage", viewLink "/pageone/kaldjf", viewLink "/pagewithsubpage/" ]
-
-            -- Demo of localStorage (set, clear, current value)
-            , div [] [ text "The required ports, decoder and JS handlers for using localStorage is initalized for you. Check it out:" ]
-            , div []
-                [ input [ class "input", style "width" "250px", placeholder "Set the value in localStorage...", Html.Events.onInput LocalStorageInputFieldChange, onEnter SetLocalStorage, value model.localStorageInputField ] [] ]
-            , div []
-                [ button [ Html.Events.onClick SetLocalStorage ] [ text "Set localStorage" ]
-                , button [ Html.Events.onClick ClearLocalStorage ] [ text "Clear localStorage" ]
+        [ div [ class "row" ]
+            [ div [ class "content", class "column" ]
+                [ h1 [] [ text "Adult Courses" ]
+                , div [] [ text "JLH Languages teaches French to adults as a type of \"brain gym.\"" ]
+                , div [] [ text "Everyone wants to live a healthy life for longer: there is increasing scientific evidence that suggests that we need to exercise our brain as well as our body. Factors that help to keep our brain in good shape are:" ]
+                , list1
+                , div [] [ text "Learning a foreign language includes all 3 of these elements. In addition, doing something different and fun is also an excellent way of reducing stress." ]
+                , div [] [ text "According to a Public Health England report in 2016, \"Keeping your brain active and challenged throughout life may help reduce your dementia risk.\"" ]
+                , div [] [ text "We teach languages in an innovative way. Each unit of teaching is based around a conversation (e.g. on food, sport, camping, music) and by the end of each module learners will have mastered the conversation so that they are able to communicate in the target language on that topic." ]
+                , div [] [ text "If you would like to learn a language from scratch or refresh your knowledge in a fun and friendly environment then get in touch to find the nearest class to you!" ]
+                , div [] [ text "Other services:" ]
+                , list2
                 ]
-            , div []
-                [ text <|
-                    "Current value in localStorage is: "
-                        ++ (case model.session.localStorage of
-                                Just item ->
-                                    "{\"token\": " ++ item.token ++ "}"
-
-                                Nothing ->
-                                    "Nothing"
-                           )
+            , div [ class "content", class "column" ]
+                [ h1 [] [ text "Immersive Restaurant Experience For Schools" ]
+                , div [] [ text "Having worked for several years as a Head of Department of Modern Languages, I was always looking for a way to bring the languages I taught to life. This is very challenging in a classroom but the alternative, a trip abroad, can be a very time-consuming endeavour and is, sadly, out of the question for many students." ]
+                , div [] [ text "This is the reason why I have teamed up with restaurants in my local area to offer a fun, effective and hassle-free alternative to a foreign trip." ]
+                , div [] [ text "Our aim is to give students a taste of being in a French restaurant whilst remaining in the UK. The restaurants I am currently working with are based in Cannock (South Staffordshire) although I do have plans to expand to other regions." ]
+                , div [] [ text "We can cater for groups up to a maximum of 30 students. We cater for all dietary requirements (e.g. vegetarians, vegans, food allergies, Halal meals) so that all students can participate fully and benefit from this experience." ]
                 ]
             ]
         ]
@@ -132,18 +118,26 @@ view model =
 -- HELPERS
 
 
+toTitle : String
 toTitle =
-    "Home"
+    "Home Page"
 
 
-highlights =
-    ul []
-        [ li [] [ text "Client-side routing that uses pushState navigation and the forward slash `/` as the path separator." ]
-        , li [] [ text "Search Engine Optimization (SEO) friendly - unique Title for each page." ]
-        , li [] [ text "Support for localStorage, with the necessary ports and JS handlers already initalized." ]
-        , li [] [ text "Support for responsive site design by listening for window size changes and always storing window size in the model." ]
-        , li [] [ text "Built with webpack." ]
-        , li [] [ text "Well-commented code!" ]
+list1 : Html msg
+list1 =
+    ul [ class "content" ]
+        [ li [] [ text "Education – learning a new skill" ]
+        , li [] [ text "Social engagement – joining a club, meeting with other people" ]
+        , li [] [ text "Cognitive stimulation – reading, puzzles, crosswords" ]
+        ]
+
+
+list2 : Html msg
+list2 =
+    ul [ class "content" ]
+        [ li [] [ text "Private tuition for GCSE and A-level examinations" ]
+        , li [] [ text "Intensive one-to-one tuition" ]
+        , li [] [ text "Business French lessons" ]
         ]
 
 

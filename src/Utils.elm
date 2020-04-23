@@ -14,7 +14,7 @@ import Svg.Attributes as SA
 
 
 genericTitle =
-    " - Elm SPA Boilerplate"
+    " - JLH Languages"
 
 
 viewLink : String -> Html msg

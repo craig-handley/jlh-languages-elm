@@ -48,8 +48,10 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "elm-spa-boilerplate - Gift Vouchers Page" ]
-        , div [] [ text "A new page." ]
+        [ div [ class "content" ]
+            [ h1 [] [ text "Gift Vouchers" ]
+            , div [] [ text "A new page." ]
+            ]
         ]
     }
 
@@ -59,4 +61,4 @@ view model =
 
 
 toTitle =
-    "New Page"
+    "Gift Vouchers Page"

@@ -48,8 +48,10 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "elm-spa-boilerplate - About Page" ]
-        , div [] [ text "About page." ]
+        [ div [ class "content" ]
+            [ h1 [] [ text "About" ]
+            , div [] [ text "A new page." ]
+            ]
         ]
     }
 

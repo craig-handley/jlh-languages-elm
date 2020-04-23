@@ -49,6 +49,10 @@ div.header div.nav-links a {
   font-size: x-large;
 }
 
+h1 {
+  text-decoration: underline;
+}
+
 div.header div.nav-links a:hover {
   color: #5A6378;
   text-decoration: underline;
@@ -64,7 +68,23 @@ div.main {
 
 /* Main content wrapper */
 .content div {
-  margin: 10px 0;
+  margin:  30px 0;
+  margin-right: 30px;
+  font-size: x-large;
+}
+
+.content img {
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.content ul {
+  font-size: x-large;
 }
 
 /* Footer */
@@ -134,4 +154,13 @@ div.not-found {
   justify-content: center;
   text-align: center;
   color: rgb(155, 155, 155);
+}
+
+div.row {
+  display: flex;
+}
+
+div.column {
+  flex: 50%;
+  /*padding: 10px;*/
 }

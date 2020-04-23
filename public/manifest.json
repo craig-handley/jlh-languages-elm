@@ -1,11 +1,13 @@
 {
-  "short_name": "Elm SPA",
-  "name": "Elm SPA Boilerplate",
-  "icons": [{
-    "src": "favicon.ico",
-    "sizes": "192x192",
-    "type": "image/png"
-  }],
+  "short_name": "JLH Languages",
+  "name": "JLH Languages",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
