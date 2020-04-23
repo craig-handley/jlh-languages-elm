@@ -18,6 +18,12 @@ type alias Session =
     { timeAppStarted : Time.Posix
     , windowSize : { width : Int, height : Int }
     , localStorage : Maybe Type.LocalStorage.LocalStorage
+    , images :
+        { logo : String
+        , email : String
+        , facebook : String
+        , phone : String
+        }
     }
 
 
@@ -36,10 +42,10 @@ init flags =
     in
     case localStorage of
         Ok storage ->
-            Session posixTime flags.windowSize storage
+            Session posixTime flags.windowSize storage flags.images
 
         Err _ ->
-            Session posixTime flags.windowSize Nothing
+            Session posixTime flags.windowSize Nothing flags.images
 
 
 

@@ -29,11 +29,9 @@ view : Session.Session -> (a -> msg) -> Details a -> Browser.Document msg
 view session msg details =
     { title = details.title ++ Utils.genericTitle
     , body =
-        [ viewHeader
-
-        -- , Utils.logo 256
+        [ viewHeader session
         , Html.map msg <| div [ class "container", class "main", style "height" (String.fromInt (session.windowSize.height - headerHeight - footerHeight) ++ "px") ] details.body
-        , viewFooter
+        , viewFooter session
         ]
     }
 
@@ -44,17 +42,41 @@ view session msg details =
 -- You could create an additional field in Viewer.Details for a header, and create this header in Main.elm or in each individual page's view
 
 
-viewHeader : Html msg
-viewHeader =
-    div [ class "header", class "container" ]
-        [ div [ class "logo" ] [ viewLogo ]
-        , div [ class "nav-links" ]
-            [ a [ href "/" ] [ text "Home" ]
-            , a [ href "/pageone" ] [ text "Page One" ]
-            , a [ href "/pagewithsubpage/hello" ] [ text "Page With Subpage" ]
-            , a [ href "/about" ] [ text "About" ]
+buildNav : Html msg
+buildNav =
+    div [ class "nav-links" ]
+        [ a [ href "/" ] [ text "Home" ]
+        , text " | "
+        , a [ href "/adultcourses" ] [ text "Adult Courses" ]
+        , text " | "
+        , a [ href "/tutoring" ] [ text "Tutoring" ]
+        , text " | "
+        , a [ href "/schools" ] [ text "Schools" ]
+        , text " | "
+        , a [ href "/events" ] [ text "Events" ]
+        , text " | "
+        , a [ href "/about" ] [ text "About" ]
+        , text " | "
+        , a [ href "/testimonials" ] [ text "Testimonials" ]
+        , text " | "
+        , a [ href "/giftvouchers" ] [ text "Gift Vouchers" ]
+        , text " | "
+        , a [ href "/privacy" ] [ text "Privacy" ]
+        , text " | "
+        , a [ href "/gallery" ] [ text "Gallery" ]
 
-            --    , a [ href "newpage" ] [ text "New Page" ]
+        -- , text " | "
+        --    , a [ href "newpage" ] [ text "New Page" ]
+        ]
+
+
+viewHeader : Session.Session -> Html msg
+viewHeader session =
+    div []
+        [ div [ class "header", class "container" ]
+            [ buildNav ]
+        , div [ class "header2", class "container", class "jlh-logo" ]
+            [ img [ src session.images.logo ] []
             ]
         ]
 
@@ -63,12 +85,19 @@ viewHeader =
 -- FOOTER
 
 
-viewFooter : Html msg
-viewFooter =
-    div [ class "footer", class "container" ]
-        [ text "A simple, no-frills boilerplate for creating delightful Single Page Applications (SPAs) in Elm."
-        , a [ href "https://github.com/jzxhuang/elm-spa-boilerplate" ] [ text "Check it out on Github!" ]
-        , text "© 2018 - present Jeffrey Huang."
+viewFooter : Session.Session -> Html msg
+viewFooter session =
+    div []
+        [ div [ class "footer", class "container" ]
+            [ buildNav ]
+        , div [ class "footer2", class "container" ]
+            [ img [ src session.images.email ] []
+            , text "jane@jlhlanguages.org"
+            , img [ src session.images.phone ] []
+            , text "07793 556020"
+            , a [ href "https://www.facebook.com/pg/JLHLanguages/posts/?ref=page_internal" ] [ img [ src session.images.facebook ] [] ]
+            , text "Find us on Facebook"
+            ]
         ]
 
 

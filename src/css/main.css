@@ -13,7 +13,17 @@ div.header {
   align-items: center;
   border-bottom: 1px solid rgba(219, 219, 219, 1);
   padding: 12px;
-  height: 36px;
+  /*height: 36px;*/
+  text-align: center;
+  justify-content: center;
+}
+
+div.header2 {
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(219, 219, 219, 1);
+  padding: 12px;
+  text-align: center;
+  justify-content: center;
 }
 
 /* Header logo */
@@ -21,21 +31,25 @@ div.logo {
   margin-left: 15px;
 }
 
+div.jlh-logo img {
+  width: 35%;
+}
+
 /* Header links */
 div.header div.nav-links {
-  margin-left: auto;
-  /* position: absolute;
-  right: 0px; */
-  padding-right: 15px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
-div.nav-links a {
+div.header div.nav-links a {
   padding: 0 7px;
   text-decoration: none;
-  color: #1184CE;
+  color: black;
+  font-size: x-large;
 }
 
-div.nav-links a:hover {
+div.header div.nav-links a:hover {
   color: #5A6378;
   text-decoration: underline;
 }
@@ -44,6 +58,8 @@ div.nav-links a:hover {
 div.main {
   flex-direction: column;
   padding: 0 75px;
+  color: white;
+  background-color: #669999;
 }
 
 /* Main content wrapper */
@@ -55,19 +71,58 @@ div.main {
 div.footer a,
 div.footer div {
   padding: 0 5px;
-  color: rgb(187, 187, 187);
+  color: white;
 }
 
 div.footer {
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  font-size: 14px;
-  height: 36px;
+  font-size: x-large;
+  /*height: 36px;*/
   padding: 12px;
   justify-content: center;
-  color: rgb(187, 187, 187);
+  color:white;
   border-top: 1px solid rgba(219, 219, 219, 1);
+  background-color: #669999;
+}
+
+div.footer2 {
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  font-size: x-large;
+  /*height: 36px;*/
+  padding: 12px;
+  justify-content: center;
+  color:white;
+  border-top: 1px solid rgba(219, 219, 219, 1);
+  background-color: #669999;
+}
+
+div.footer2 img {
+  width: 30px;
+  padding-left: 30px;
+  padding-right: 5px;
+}
+
+
+div.footer div.nav-links {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+div.footer div.nav-links a {
+  padding: 0 7px;
+  text-decoration: none;
+  color:white;
+  font-size: x-large;
+}
+
+div.footer div.nav-links a:hover {
+  color: #5A6378;
+  text-decoration: underline;
 }
 
 /* 404 Page */

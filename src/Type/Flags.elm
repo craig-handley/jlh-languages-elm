@@ -12,4 +12,10 @@ type alias Flags =
     { timeAppStarted : Int
     , windowSize : { width : Int, height : Int }
     , localStorage : Json.Encode.Value
+    , images :
+        { logo : String
+        , email : String
+        , facebook : String
+        , phone : String
+        }
     }

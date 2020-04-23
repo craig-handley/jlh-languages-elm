@@ -10,9 +10,17 @@ import Html.Attributes exposing (..)
 import Json.Decode
 import Json.Encode
 import Page.AboutPage as AboutPage
+import Page.AdultCoursesPage as AdultCoursesPage
+import Page.EventsPage as EventsPage
+import Page.GalleryPage as GalleryPage
+import Page.GiftVouchersPage as GiftVouchersPage
 import Page.PageOne as PageOne
 import Page.PageWithSubpage as PageWithSubpage
+import Page.PrivacyPage as PrivacyPage
+import Page.SchoolsPage as SchoolsPage
+import Page.TestimonialsPage as TestimonialsPage
 import Page.Top as Top
+import Page.TutoringPage as TutoringPage
 import Ports
 import Session
 import Type.Flags
@@ -35,6 +43,14 @@ type Page
     | PageOne PageOne.Model
     | PageWithSubpage PageWithSubpage.Model
     | AboutPage AboutPage.Model
+    | AdultCoursesPage AdultCoursesPage.Model
+    | TutoringPage TutoringPage.Model
+    | SchoolsPage SchoolsPage.Model
+    | EventsPage EventsPage.Model
+    | TestimonialsPage TestimonialsPage.Model
+    | GiftVouchersPage GiftVouchersPage.Model
+    | PrivacyPage PrivacyPage.Model
+    | GalleryPage GalleryPage.Model
 
 
 
@@ -86,6 +102,14 @@ type Msg
     | PageOneMsg PageOne.Msg
     | PageWithSubpageMsg PageWithSubpage.Msg
     | AboutPageMsg AboutPage.Msg
+    | AdultCoursesPageMsg AdultCoursesPage.Msg
+    | TutoringPageMsg TutoringPage.Msg
+    | SchoolsPageMsg SchoolsPage.Msg
+    | EventsPageMsg EventsPage.Msg
+    | TestimonialsPageMsg TestimonialsPage.Msg
+    | GiftVouchersPageMsg GiftVouchersPage.Msg
+    | PrivacyPageMsg PrivacyPage.Msg
+    | GalleryPageMsg GalleryPage.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -176,6 +200,70 @@ update message model =
                 _ ->
                     ( model, Cmd.none )
 
+        AdultCoursesPageMsg msg ->
+            case model.page of
+                AdultCoursesPage m ->
+                    mapAdultCoursesPageMsg model (AdultCoursesPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        TutoringPageMsg msg ->
+            case model.page of
+                TutoringPage m ->
+                    mapTutoringPageMsg model (TutoringPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        SchoolsPageMsg msg ->
+            case model.page of
+                SchoolsPage m ->
+                    mapSchoolsPageMsg model (SchoolsPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        EventsPageMsg msg ->
+            case model.page of
+                EventsPage m ->
+                    mapEventsPageMsg model (EventsPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        TestimonialsPageMsg msg ->
+            case model.page of
+                TestimonialsPage m ->
+                    mapTestimonialsPageMsg model (TestimonialsPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        GiftVouchersPageMsg msg ->
+            case model.page of
+                GiftVouchersPage m ->
+                    mapGiftVouchersPageMsg model (GiftVouchersPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        PrivacyPageMsg msg ->
+            case model.page of
+                PrivacyPage m ->
+                    mapPrivacyPageMsg model (PrivacyPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        GalleryPageMsg msg ->
+            case model.page of
+                GalleryPage m ->
+                    mapGalleryPageMsg model (GalleryPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
 
 
 -- VIEW
@@ -205,6 +293,30 @@ view model =
 
         AboutPage m ->
             Viewer.view session AboutPageMsg (AboutPage.view m)
+
+        AdultCoursesPage m ->
+            Viewer.view session AdultCoursesPageMsg (AdultCoursesPage.view m)
+
+        TutoringPage m ->
+            Viewer.view session TutoringPageMsg (TutoringPage.view m)
+
+        SchoolsPage m ->
+            Viewer.view session SchoolsPageMsg (SchoolsPage.view m)
+
+        EventsPage m ->
+            Viewer.view session EventsPageMsg (EventsPage.view m)
+
+        TestimonialsPage m ->
+            Viewer.view session TestimonialsPageMsg (TestimonialsPage.view m)
+
+        GiftVouchersPage m ->
+            Viewer.view session GiftVouchersPageMsg (GiftVouchersPage.view m)
+
+        PrivacyPage m ->
+            Viewer.view session PrivacyPageMsg (PrivacyPage.view m)
+
+        GalleryPage m ->
+            Viewer.view session GalleryPageMsg (GalleryPage.view m)
 
 
 
@@ -266,6 +378,46 @@ mapAboutPageMsg model ( m, cmds ) =
     ( { model | page = AboutPage m }, Cmd.map AboutPageMsg cmds )
 
 
+mapAdultCoursesPageMsg : Model -> ( AdultCoursesPage.Model, Cmd AdultCoursesPage.Msg ) -> ( Model, Cmd Msg )
+mapAdultCoursesPageMsg model ( m, cmds ) =
+    ( { model | page = AdultCoursesPage m }, Cmd.map AdultCoursesPageMsg cmds )
+
+
+mapTutoringPageMsg : Model -> ( TutoringPage.Model, Cmd TutoringPage.Msg ) -> ( Model, Cmd Msg )
+mapTutoringPageMsg model ( m, cmds ) =
+    ( { model | page = TutoringPage m }, Cmd.map TutoringPageMsg cmds )
+
+
+mapSchoolsPageMsg : Model -> ( SchoolsPage.Model, Cmd SchoolsPage.Msg ) -> ( Model, Cmd Msg )
+mapSchoolsPageMsg model ( m, cmds ) =
+    ( { model | page = SchoolsPage m }, Cmd.map SchoolsPageMsg cmds )
+
+
+mapEventsPageMsg : Model -> ( EventsPage.Model, Cmd EventsPage.Msg ) -> ( Model, Cmd Msg )
+mapEventsPageMsg model ( m, cmds ) =
+    ( { model | page = EventsPage m }, Cmd.map EventsPageMsg cmds )
+
+
+mapTestimonialsPageMsg : Model -> ( TestimonialsPage.Model, Cmd TestimonialsPage.Msg ) -> ( Model, Cmd Msg )
+mapTestimonialsPageMsg model ( m, cmds ) =
+    ( { model | page = TestimonialsPage m }, Cmd.map TestimonialsPageMsg cmds )
+
+
+mapGiftVouchersPageMsg : Model -> ( GiftVouchersPage.Model, Cmd GiftVouchersPage.Msg ) -> ( Model, Cmd Msg )
+mapGiftVouchersPageMsg model ( m, cmds ) =
+    ( { model | page = GiftVouchersPage m }, Cmd.map GiftVouchersPageMsg cmds )
+
+
+mapPrivacyPageMsg : Model -> ( PrivacyPage.Model, Cmd PrivacyPage.Msg ) -> ( Model, Cmd Msg )
+mapPrivacyPageMsg model ( m, cmds ) =
+    ( { model | page = PrivacyPage m }, Cmd.map PrivacyPageMsg cmds )
+
+
+mapGalleryPageMsg : Model -> ( GalleryPage.Model, Cmd GalleryPage.Msg ) -> ( Model, Cmd Msg )
+mapGalleryPageMsg model ( m, cmds ) =
+    ( { model | page = GalleryPage m }, Cmd.map GalleryPageMsg cmds )
+
+
 
 -- Extracts the session from the model
 
@@ -288,6 +440,30 @@ extractSession model =
             m.session
 
         AboutPage m ->
+            m.session
+
+        AdultCoursesPage m ->
+            m.session
+
+        TutoringPage m ->
+            m.session
+
+        SchoolsPage m ->
+            m.session
+
+        EventsPage m ->
+            m.session
+
+        TestimonialsPage m ->
+            m.session
+
+        GiftVouchersPage m ->
+            m.session
+
+        PrivacyPage m ->
+            m.session
+
+        GalleryPage m ->
             m.session
 
 
@@ -315,6 +491,30 @@ updateSession model session =
 
         AboutPage m ->
             mapAboutPageMsg model (AboutPage.init session)
+
+        AdultCoursesPage m ->
+            mapAdultCoursesPageMsg model (AdultCoursesPage.init session)
+
+        TutoringPage m ->
+            mapTutoringPageMsg model (TutoringPage.init session)
+
+        SchoolsPage m ->
+            mapSchoolsPageMsg model (SchoolsPage.init session)
+
+        EventsPage m ->
+            mapEventsPageMsg model (EventsPage.init session)
+
+        TestimonialsPage m ->
+            mapTestimonialsPageMsg model (TestimonialsPage.init session)
+
+        GiftVouchersPage m ->
+            mapGiftVouchersPageMsg model (GiftVouchersPage.init session)
+
+        PrivacyPage m ->
+            mapPrivacyPageMsg model (PrivacyPage.init session)
+
+        GalleryPage m ->
+            mapGalleryPageMsg model (GalleryPage.init session)
 
 
 
@@ -355,15 +555,27 @@ parser : Model -> Session.Session -> Parser.Parser (( Model, Cmd Msg ) -> a) a
 parser model session =
     Parser.oneOf
         [ route Parser.top (mapTopMsg model (Top.init session))
-        , route (Parser.s paths.pageOne)
-            (mapPageOneMsg model (PageOne.init session))
 
         -- , route (Parser.s paths.newPage)
         --     (mapNewPageMsg model (NewPage.init session))
-        , route (Parser.s paths.pageWithSubpage </> Parser.string)
-            (\subpage -> mapPageWithSubpageMsg model (PageWithSubpage.init session subpage))
         , route (Parser.s paths.aboutPage)
             (mapAboutPageMsg model (AboutPage.init session))
+        , route (Parser.s paths.adultCoursesPage)
+            (mapAdultCoursesPageMsg model (AdultCoursesPage.init session))
+        , route (Parser.s paths.tutoringPage)
+            (mapTutoringPageMsg model (TutoringPage.init session))
+        , route (Parser.s paths.schoolsPage)
+            (mapSchoolsPageMsg model (SchoolsPage.init session))
+        , route (Parser.s paths.eventsPage)
+            (mapEventsPageMsg model (EventsPage.init session))
+        , route (Parser.s paths.testimonialsPage)
+            (mapTestimonialsPageMsg model (TestimonialsPage.init session))
+        , route (Parser.s paths.giftVouchersPage)
+            (mapGiftVouchersPageMsg model (GiftVouchersPage.init session))
+        , route (Parser.s paths.privacyPage)
+            (mapPrivacyPageMsg model (PrivacyPage.init session))
+        , route (Parser.s paths.galleryPage)
+            (mapGalleryPageMsg model (GalleryPage.init session))
         ]
 
 
@@ -373,9 +585,15 @@ parser model session =
 
 paths =
     { top = ""
-    , pageOne = "pageone"
-    , pageWithSubpage = "pagewithsubpage"
+    , adultCoursesPage = "adultcourses"
+    , tutoringPage = "tutoring"
+    , schoolsPage = "schools"
+    , eventsPage = "events"
     , aboutPage = "about"
+    , testimonialsPage = "testimonials"
+    , giftVouchersPage = "giftvouchers"
+    , privacyPage = "privacy"
+    , galleryPage = "gallery"
 
     --, newPage = "newpage"
     }
