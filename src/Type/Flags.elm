@@ -26,5 +26,9 @@ type alias Flags =
         , schools_french_03 : String
         , schools_french_04 : String
         , schools_french_05 : String
+        , schools_spanish_flyer : String
+        , schools_spanish_food : String
+        , schools_spanish_room : String
+        , schools_spanish_staff : String
         }
     }

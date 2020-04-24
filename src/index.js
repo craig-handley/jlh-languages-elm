@@ -16,6 +16,10 @@ import schools_french_02 from './img/schools_french_02.png';
 import schools_french_03 from './img/schools_french_03.png';
 import schools_french_04 from './img/schools_french_04.jpg';
 import schools_french_05 from './img/schools_french_05.jpg';
+import schools_spanish_flyer from './img/schools_spanish_flyer.png';
+import schools_spanish_food from './img/schools_spanish_food.jpg';
+import schools_spanish_room from './img/schools_spanish_room.jpg';
+import schools_spanish_staff from './img/schools_spanish_staff.jpg';
 
 // CONFIG
 const storageName = "elm-spa-boilerplate" // key in localStorage
@@ -49,7 +53,11 @@ function generateFlags() {
       schools_french_02,
       schools_french_03,
       schools_french_04,
-      schools_french_05
+      schools_french_05,
+      schools_spanish_flyer,
+      schools_spanish_food,
+      schools_spanish_room,
+      schools_spanish_staff,
     }
   };
 }

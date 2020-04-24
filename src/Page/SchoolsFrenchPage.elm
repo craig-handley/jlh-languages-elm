@@ -72,7 +72,7 @@ view model =
             , div [] [ text "Sides: légumes, riz, pâtes" ]
             , div [] [ text "Desserts: glace aux choix, crème caramel, mousse au chocolat, salade de fruits" ]
             , div [] [ text "Arrival midday Depart 2.00 p.m." ]
-            , div [] [ text "Prices: The prices quoted do NOT include transport to and from the venue. Normally schools prefer to use their own school transport or work with transport companies they are familiar with. If transport is required, please state this when asking for a quote and it can be included in the total price." ]
+            , div [] [ text "Prices: The prices quoted do NOT include transport to and from the venue." ]
             , img [ src model.session.images.schools_french_05 ] []
             , div [] [ text "What are the benefits of the French experience?" ]
             , list1
