@@ -48,9 +48,9 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "Events" ]
-        , div [ class "content" ]
-            [ div [] [ text "A new page." ]
+        [ div [ class "content" ]
+            [ div [ class "heading" ] [ text "Events" ]
+            , div [] [ text "A new page." ]
             ]
         ]
     }
@@ -60,5 +60,6 @@ view model =
 -- HELPERS
 
 
+toTitle : String
 toTitle =
     "Events Page"

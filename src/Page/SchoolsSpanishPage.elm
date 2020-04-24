@@ -48,9 +48,9 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "Spanish Restaurant Experience" ]
-        , div [ class "content" ]
-            [ img [ src model.session.images.schools_spanish_food ] []
+        [ div [ class "content" ]
+            [ div [ class "heading" ] [ text "Spanish Restaurant Experience" ]
+            , img [ src model.session.images.schools_spanish_food ] []
             , img [ src model.session.images.schools_spanish_flyer ] []
             , div [] [ text "Having worked for several years as a Head of Department of Modern Languages, I was always looking for ways to bring the languages I taught to life. This is very challenging in a classroom but the alternative, a trip abroad, can be a very time-consuming endeavour and is, sadly, out of the question for many students." ]
             , div [] [ text "This is the reason why I have teamed up with restaurants in my local area to offer a fun, effective and hassle-free alternative to a foreign trip." ]

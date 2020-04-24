@@ -48,9 +48,9 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "Tutoring" ]
-        , div [ class "content" ]
-            [ div [] [ text "Individual tuition from £30 per hour" ]
+        [ div [ class "content" ]
+            [ div [ class "heading" ] [ text "Tutoring" ]
+            , div [] [ text "Individual tuition from £30 per hour" ]
             , div [] [ text "Group tuition price on request" ]
             , img [ src model.session.images.tutoring_01 ] []
             , img [ src model.session.images.tutoring_02 ] []

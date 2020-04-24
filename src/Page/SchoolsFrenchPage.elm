@@ -48,9 +48,9 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "French Restaurant Experience" ]
-        , div [ class "content" ]
-            [ img [ src model.session.images.schools_french_01 ] []
+        [ div [ class "content" ]
+            [ div [ class "heading" ] [ text "French Restaurant Experience" ]
+            , img [ src model.session.images.schools_french_01 ] []
             , img [ src model.session.images.schools_french_02 ] []
             , img [ src model.session.images.schools_french_03 ] []
             , div [] [ text "Having worked for several years as a Head of Department of Modern Languages, I was always looking for a way to bring the languages I taught to life. This is very challenging in a classroom but the alternative, a trip abroad, can be a very time-consuming endeavour and is, sadly, out of the question for many students." ]

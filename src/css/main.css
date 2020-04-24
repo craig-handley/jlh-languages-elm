@@ -195,3 +195,8 @@ a.select {
 .underline {
   text-decoration: underline;
 }
+
+.heading {
+  font-size: xx-large;
+  text-decoration: underline;
+}

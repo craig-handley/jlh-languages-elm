@@ -48,9 +48,9 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "Current Courses" ]
-        , div [ class "content" ]
-            [ table []
+        [ div [ class "content" ]
+            [ div [ class "heading" ] [ text "Current Courses" ]
+            , table []
                 [ thead []
                     [ tr []
                         [ th [] [ text "Date" ]
