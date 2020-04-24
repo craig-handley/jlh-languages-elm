@@ -49,7 +49,7 @@ buildNav =
     div [ class "nav-links" ]
         [ a [ href "/" ] [ text "Home" ]
         , text " | "
-        , a [ href "/adultcourses" ] [ text "Adult Courses" ]
+        , a [ href "/adult-courses" ] [ text "Adult Courses" ]
         , text " | "
         , a [ href "/tutoring" ] [ text "Tutoring" ]
         , text " | "
@@ -61,7 +61,7 @@ buildNav =
         , text " | "
         , a [ href "/testimonials" ] [ text "Testimonials" ]
         , text " | "
-        , a [ href "/giftvouchers" ] [ text "Gift Vouchers" ]
+        , a [ href "/gift-vouchers" ] [ text "Gift Vouchers" ]
         , text " | "
         , a [ href "/privacy" ] [ text "Privacy" ]
         , text " | "

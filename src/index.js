@@ -9,6 +9,13 @@ import facebook from './img/facebook.png';
 import phone from './img/phone.png';
 import tutoring_01 from './img/tutoring_01.png';
 import tutoring_02 from './img/tutoring_02.png';
+import schools_french from './img/schools_french.jpg';
+import schools_spanish from './img/schools_spanish.jpg';
+import schools_french_01 from './img/schools_french_01.jpg';
+import schools_french_02 from './img/schools_french_02.png';
+import schools_french_03 from './img/schools_french_03.png';
+import schools_french_04 from './img/schools_french_04.jpg';
+import schools_french_05 from './img/schools_french_05.jpg';
 
 // CONFIG
 const storageName = "elm-spa-boilerplate" // key in localStorage
@@ -35,7 +42,14 @@ function generateFlags() {
       facebook,
       phone,
       tutoring_01,
-      tutoring_02
+      tutoring_02,
+      schools_french,
+      schools_spanish,
+      schools_french_01,
+      schools_french_02,
+      schools_french_03,
+      schools_french_04,
+      schools_french_05
     }
   };
 }

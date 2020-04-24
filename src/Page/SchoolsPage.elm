@@ -48,9 +48,23 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ div [ class "content" ]
-            [ h1 [] [ text "Schools" ]
-            , div [] [ text "A new page." ]
+        [ div [ class "row" ]
+            [ div [ class "column" ]
+                [ div [ class "content" ]
+                    [ a [ class "select", href "/schools-french" ]
+                        [ text "French Restaurant Experience"
+                        , img [ src model.session.images.schools_french ] []
+                        ]
+                    ]
+                ]
+            , div [ class "column" ]
+                [ div [ class "content" ]
+                    [ a [ class "select", href "/schools-spanish" ]
+                        [ text "Spanish Restaurant Experience"
+                        , img [ src model.session.images.schools_spanish ] []
+                        ]
+                    ]
+                ]
             ]
         ]
     }
@@ -60,5 +74,6 @@ view model =
 -- HELPERS
 
 
+toTitle : String
 toTitle =
     "Schools Page"

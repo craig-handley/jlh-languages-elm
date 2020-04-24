@@ -1,4 +1,4 @@
-module Page.TutoringPage exposing (Model, Msg(..), init, update, view)
+module Page.SchoolsSpanishPage exposing (Model, Msg(..), init, update, view)
 
 import Browser
 import Html exposing (..)
@@ -48,12 +48,9 @@ view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
-        [ h1 [] [ text "Tutoring" ]
+        [ h1 [] [ text "Schools Spanish" ]
         , div [ class "content" ]
-            [ div [] [ text "Individual tuition from £30 per hour" ]
-            , div [] [ text "Group tuition price on request" ]
-            , img [ src model.session.images.tutoring_01 ] []
-            , img [ src model.session.images.tutoring_02 ] []
+            [ div [] [ text "A new page." ]
             ]
         ]
     }
@@ -63,6 +60,5 @@ view model =
 -- HELPERS
 
 
-toTitle : String
 toTitle =
-    "Tutoring Page"
+    "Schools Spanish Page"

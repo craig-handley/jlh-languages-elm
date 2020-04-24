@@ -67,10 +67,13 @@ div.main {
 }
 
 /* Main content wrapper */
+.content {
+  font-size: x-large;
+}
+
 .content div {
   margin:  30px 0;
   margin-right: 30px;
-  font-size: x-large;
 }
 
 .content img {
@@ -81,10 +84,7 @@ div.main {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-}
-
-.content ul {
-  font-size: x-large;
+  padding: 30px;
 }
 
 /* Footer */
@@ -126,7 +126,6 @@ div.footer2 img {
   padding-right: 5px;
 }
 
-
 div.footer div.nav-links {
   align-items: center;
   text-align: center;
@@ -163,4 +162,36 @@ div.row {
 div.column {
   flex: 50%;
   /*padding: 10px;*/
+}
+
+thead {
+  text-align: left;
+  border-bottom: 2px solid white;
+}
+
+tr {
+  border-bottom: 1px solid white;
+  /*height: 5vh;*/
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+a.select {
+  text-decoration:none;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: xx-large;
+  padding: 30px;
+}
+
+.underline {
+  text-decoration: underline;
 }

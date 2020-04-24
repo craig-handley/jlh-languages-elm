@@ -17,7 +17,9 @@ import Page.GiftVouchersPage as GiftVouchersPage
 import Page.PageOne as PageOne
 import Page.PageWithSubpage as PageWithSubpage
 import Page.PrivacyPage as PrivacyPage
+import Page.SchoolsFrenchPage as SchoolsFrenchPage
 import Page.SchoolsPage as SchoolsPage
+import Page.SchoolsSpanishPage as SchoolsSpanishPage
 import Page.TestimonialsPage as TestimonialsPage
 import Page.Top as Top
 import Page.TutoringPage as TutoringPage
@@ -51,6 +53,8 @@ type Page
     | GiftVouchersPage GiftVouchersPage.Model
     | PrivacyPage PrivacyPage.Model
     | GalleryPage GalleryPage.Model
+    | SchoolsFrenchPage SchoolsFrenchPage.Model
+    | SchoolsSpanishPage SchoolsSpanishPage.Model
 
 
 
@@ -110,6 +114,8 @@ type Msg
     | GiftVouchersPageMsg GiftVouchersPage.Msg
     | PrivacyPageMsg PrivacyPage.Msg
     | GalleryPageMsg GalleryPage.Msg
+    | SchoolsFrenchPageMsg SchoolsFrenchPage.Msg
+    | SchoolsSpanishPageMsg SchoolsSpanishPage.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -264,6 +270,22 @@ update message model =
                 _ ->
                     ( model, Cmd.none )
 
+        SchoolsFrenchPageMsg msg ->
+            case model.page of
+                SchoolsFrenchPage m ->
+                    mapSchoolsFrenchPageMsg model (SchoolsFrenchPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
+        SchoolsSpanishPageMsg msg ->
+            case model.page of
+                SchoolsSpanishPage m ->
+                    mapSchoolsSpanishPageMsg model (SchoolsSpanishPage.update msg m)
+
+                _ ->
+                    ( model, Cmd.none )
+
 
 
 -- VIEW
@@ -317,6 +339,12 @@ view model =
 
         GalleryPage m ->
             Viewer.view session GalleryPageMsg (GalleryPage.view m)
+
+        SchoolsFrenchPage m ->
+            Viewer.view session SchoolsFrenchPageMsg (SchoolsFrenchPage.view m)
+
+        SchoolsSpanishPage m ->
+            Viewer.view session SchoolsSpanishPageMsg (SchoolsSpanishPage.view m)
 
 
 
@@ -418,6 +446,16 @@ mapGalleryPageMsg model ( m, cmds ) =
     ( { model | page = GalleryPage m }, Cmd.map GalleryPageMsg cmds )
 
 
+mapSchoolsFrenchPageMsg : Model -> ( SchoolsFrenchPage.Model, Cmd SchoolsFrenchPage.Msg ) -> ( Model, Cmd Msg )
+mapSchoolsFrenchPageMsg model ( m, cmds ) =
+    ( { model | page = SchoolsFrenchPage m }, Cmd.map SchoolsFrenchPageMsg cmds )
+
+
+mapSchoolsSpanishPageMsg : Model -> ( SchoolsSpanishPage.Model, Cmd SchoolsSpanishPage.Msg ) -> ( Model, Cmd Msg )
+mapSchoolsSpanishPageMsg model ( m, cmds ) =
+    ( { model | page = SchoolsSpanishPage m }, Cmd.map SchoolsSpanishPageMsg cmds )
+
+
 
 -- Extracts the session from the model
 
@@ -464,6 +502,12 @@ extractSession model =
             m.session
 
         GalleryPage m ->
+            m.session
+
+        SchoolsFrenchPage m ->
+            m.session
+
+        SchoolsSpanishPage m ->
             m.session
 
 
@@ -515,6 +559,12 @@ updateSession model session =
 
         GalleryPage m ->
             mapGalleryPageMsg model (GalleryPage.init session)
+
+        SchoolsFrenchPage m ->
+            mapSchoolsFrenchPageMsg model (SchoolsFrenchPage.init session)
+
+        SchoolsSpanishPage m ->
+            mapSchoolsSpanishPageMsg model (SchoolsSpanishPage.init session)
 
 
 
@@ -576,6 +626,10 @@ parser model session =
             (mapPrivacyPageMsg model (PrivacyPage.init session))
         , route (Parser.s paths.galleryPage)
             (mapGalleryPageMsg model (GalleryPage.init session))
+        , route (Parser.s paths.schoolsFrenchPage)
+            (mapSchoolsFrenchPageMsg model (SchoolsFrenchPage.init session))
+        , route (Parser.s paths.schoolsSpanishPage)
+            (mapSchoolsSpanishPageMsg model (SchoolsSpanishPage.init session))
         ]
 
 
@@ -585,15 +639,17 @@ parser model session =
 
 paths =
     { top = ""
-    , adultCoursesPage = "adultcourses"
+    , adultCoursesPage = "adult-courses"
     , tutoringPage = "tutoring"
     , schoolsPage = "schools"
     , eventsPage = "events"
     , aboutPage = "about"
     , testimonialsPage = "testimonials"
-    , giftVouchersPage = "giftvouchers"
+    , giftVouchersPage = "gift-vouchers"
     , privacyPage = "privacy"
     , galleryPage = "gallery"
+    , schoolsFrenchPage = "schools-french"
+    , schoolsSpanishPage = "schools-spanish"
 
     --, newPage = "newpage"
     }
