@@ -50,7 +50,7 @@ view model =
     , body =
         [ div [ class "content" ]
             [ div [ class "heading" ] [ text "Gift Vouchers" ]
-            , div [] [ text "A new page." ]
+            , img [ src model.session.images.gift_voucher_01 ] []
             ]
         ]
     }
@@ -60,5 +60,6 @@ view model =
 -- HELPERS
 
 
+toTitle : String
 toTitle =
     "Gift Vouchers Page"

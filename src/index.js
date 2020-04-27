@@ -20,6 +20,16 @@ import schools_spanish_flyer from './img/schools_spanish_flyer.png';
 import schools_spanish_food from './img/schools_spanish_food.jpg';
 import schools_spanish_room from './img/schools_spanish_room.jpg';
 import schools_spanish_staff from './img/schools_spanish_staff.jpg';
+import events_01 from './img/events_01.png';
+import about_01 from './img/about_01.jpg';
+import testimonials_01 from './img/testimonials_01.png';
+import testimonials_02 from './img/testimonials_02.jpg';
+import testimonials_03 from './img/testimonials_03.png';
+import testimonials_04 from './img/testimonials_04.png';
+import gift_voucher_01 from './img/gift_voucher_01.png';
+
+
+
 
 // CONFIG
 const storageName = "elm-spa-boilerplate" // key in localStorage
@@ -58,6 +68,13 @@ function generateFlags() {
       schools_spanish_food,
       schools_spanish_room,
       schools_spanish_staff,
+      events_01,
+      about_01,
+      testimonials_01,
+      testimonials_02,
+      testimonials_03,
+      testimonials_04,
+      gift_voucher_01,
     }
   };
 }

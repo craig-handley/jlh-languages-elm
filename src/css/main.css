@@ -87,6 +87,17 @@ div.main {
   padding: 30px;
 }
 
+.content img.small {
+  flex-direction: column;
+  width: 20%;
+  justify-content: left;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  padding: 0;
+}
+
 /* Footer */
 div.footer a,
 div.footer div {

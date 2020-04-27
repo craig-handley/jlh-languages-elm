@@ -36,6 +36,13 @@ type alias Session =
         , schools_spanish_food : String
         , schools_spanish_room : String
         , schools_spanish_staff : String
+        , events_01 : String
+        , about_01 : String
+        , testimonials_01 : String
+        , testimonials_02 : String
+        , testimonials_03 : String
+        , testimonials_04 : String
+        , gift_voucher_01 : String
         }
     }
 

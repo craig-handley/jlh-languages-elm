@@ -50,7 +50,7 @@ view model =
     , body =
         [ div [ class "content" ]
             [ div [ class "heading" ] [ text "Events" ]
-            , div [] [ text "A new page." ]
+            , img [ src model.session.images.events_01 ] []
             ]
         ]
     }
