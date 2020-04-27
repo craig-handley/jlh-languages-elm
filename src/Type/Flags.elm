@@ -37,5 +37,35 @@ type alias Flags =
         , testimonials_03 : String
         , testimonials_04 : String
         , gift_voucher_01 : String
+        , gallery_01 : String
+        , gallery_02 : String
+        , gallery_03 : String
+        , gallery_04 : String
+        , gallery_05 : String
+        , gallery_06 : String
+        , gallery_07 : String
+        , gallery_08 : String
+        , gallery_09 : String
+        , gallery_10 : String
+        , gallery_11 : String
+        , gallery_12 : String
+        , gallery_13 : String
+        , gallery_14 : String
+        , gallery_15 : String
+        , gallery_16 : String
+        , gallery_17 : String
+        , gallery_18 : String
+        , gallery_19 : String
+        , gallery_20 : String
+        , gallery_21 : String
+        , gallery_22 : String
+        , gallery_23 : String
+        , gallery_24 : String
+        , gallery_25 : String
+        , gallery_26 : String
+        , gallery_27 : String
+        , gallery_28 : String
+        , gallery_29 : String
+        , gallery_30 : String
         }
     }

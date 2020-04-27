@@ -207,6 +207,10 @@ a.select {
   text-decoration: underline;
 }
 
+.center {
+  text-align: center;
+}
+
 .heading {
   font-size: xx-large;
   text-decoration: underline;

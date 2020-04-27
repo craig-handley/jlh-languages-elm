@@ -27,6 +27,36 @@ import testimonials_02 from './img/testimonials_02.jpg';
 import testimonials_03 from './img/testimonials_03.png';
 import testimonials_04 from './img/testimonials_04.png';
 import gift_voucher_01 from './img/gift_voucher_01.png';
+import gallery_01 from './img/gallery_01.jpg';
+import gallery_02 from './img/gallery_02.jpg';
+import gallery_03 from './img/gallery_03.jpg';
+import gallery_04 from './img/gallery_04.jpg';
+import gallery_05 from './img/gallery_05.jpg';
+import gallery_06 from './img/gallery_06.png';
+import gallery_07 from './img/gallery_07.jpg';
+import gallery_08 from './img/gallery_08.jpg';
+import gallery_09 from './img/gallery_09.jpg';
+import gallery_10 from './img/gallery_10.jpg';
+import gallery_11 from './img/gallery_11.jpg';
+import gallery_12 from './img/gallery_12.png';
+import gallery_13 from './img/gallery_13.png';
+import gallery_14 from './img/gallery_14.png';
+import gallery_15 from './img/gallery_15.png';
+import gallery_16 from './img/gallery_16.jpg';
+import gallery_17 from './img/gallery_17.jpg';
+import gallery_18 from './img/gallery_18.jpg';
+import gallery_19 from './img/gallery_19.jpg';
+import gallery_20 from './img/gallery_20.png';
+import gallery_21 from './img/gallery_21.png';
+import gallery_22 from './img/gallery_22.png';
+import gallery_23 from './img/gallery_23.png';
+import gallery_24 from './img/gallery_24.jpg';
+import gallery_25 from './img/gallery_25.png';
+import gallery_26 from './img/gallery_26.jpg';
+import gallery_27 from './img/gallery_27.jpg';
+import gallery_28 from './img/gallery_28.jpg';
+import gallery_29 from './img/gallery_29.jpg';
+import gallery_30 from './img/gallery_30.jpg';
 
 
 
@@ -75,6 +105,36 @@ function generateFlags() {
       testimonials_03,
       testimonials_04,
       gift_voucher_01,
+      gallery_01,
+      gallery_02,
+      gallery_03,
+      gallery_04,
+      gallery_05,
+      gallery_06,
+      gallery_07,
+      gallery_08,
+      gallery_09,
+      gallery_10,
+      gallery_11,
+      gallery_12,
+      gallery_13,
+      gallery_14,
+      gallery_15,
+      gallery_16,
+      gallery_17,
+      gallery_18,
+      gallery_19,
+      gallery_20,
+      gallery_21,
+      gallery_22,
+      gallery_23,
+      gallery_24,
+      gallery_25,
+      gallery_26,
+      gallery_27,
+      gallery_28,
+      gallery_29,
+      gallery_30,
     }
   };
 }
