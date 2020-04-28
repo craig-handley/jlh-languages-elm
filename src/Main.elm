@@ -14,8 +14,6 @@ import Page.AdultCoursesPage as AdultCoursesPage
 import Page.EventsPage as EventsPage
 import Page.GalleryPage as GalleryPage
 import Page.GiftVouchersPage as GiftVouchersPage
-import Page.PageOne as PageOne
-import Page.PageWithSubpage as PageWithSubpage
 import Page.PrivacyPage as PrivacyPage
 import Page.SchoolsFrenchPage as SchoolsFrenchPage
 import Page.SchoolsPage as SchoolsPage
@@ -42,8 +40,6 @@ type Page
     = NotFound Session.Session
     | Top Top.Model
       -- | NewPage NewPage.Model
-    | PageOne PageOne.Model
-    | PageWithSubpage PageWithSubpage.Model
     | AboutPage AboutPage.Model
     | AdultCoursesPage AdultCoursesPage.Model
     | TutoringPage TutoringPage.Model
@@ -103,8 +99,6 @@ type Msg
     | OnLocalStorageChange Json.Encode.Value
     | TopMsg Top.Msg
       -- | NewPageMsg NewPage.Msg
-    | PageOneMsg PageOne.Msg
-    | PageWithSubpageMsg PageWithSubpage.Msg
     | AboutPageMsg AboutPage.Msg
     | AdultCoursesPageMsg AdultCoursesPage.Msg
     | TutoringPageMsg TutoringPage.Msg
@@ -182,22 +176,6 @@ update message model =
         --                mapNewPageMsg model (NewPage.update msg m)
         --            _ ->
         --                ( model, Cmd.none )
-        PageOneMsg msg ->
-            case model.page of
-                PageOne m ->
-                    mapPageOneMsg model (PageOne.update msg m)
-
-                _ ->
-                    ( model, Cmd.none )
-
-        PageWithSubpageMsg msg ->
-            case model.page of
-                PageWithSubpage m ->
-                    mapPageWithSubpageMsg model (PageWithSubpage.update msg m)
-
-                _ ->
-                    ( model, Cmd.none )
-
         AboutPageMsg msg ->
             case model.page of
                 AboutPage m ->
@@ -307,12 +285,6 @@ view model =
 
         -- NewPage _ ->
         -- Viewer.view session             NewPageMsg (NewPage.view m) model.route
-        PageOne m ->
-            Viewer.view session PageOneMsg (PageOne.view m)
-
-        PageWithSubpage m ->
-            Viewer.view session PageWithSubpageMsg (PageWithSubpage.view m)
-
         AboutPage m ->
             Viewer.view session AboutPageMsg (AboutPage.view m)
 
@@ -385,20 +357,10 @@ mapTopMsg model ( m, cmds ) =
     ( { model | page = Top m }, Cmd.map TopMsg cmds )
 
 
-mapPageOneMsg : Model -> ( PageOne.Model, Cmd PageOne.Msg ) -> ( Model, Cmd Msg )
-mapPageOneMsg model ( m, cmds ) =
-    ( { model | page = PageOne m }, Cmd.map PageOneMsg cmds )
-
-
 
 -- mapNewPageMsg : Model -> ( NewPage.Model, Cmd NewPage.Msg ) -> ( Model, Cmd Msg )
 -- mapNewPageMsg model ( m, cmds ) =
 --     ( { model | page = NewPage m }, Cmd.map NewPageMsg cmds )
-
-
-mapPageWithSubpageMsg : Model -> ( PageWithSubpage.Model, Cmd PageWithSubpage.Msg ) -> ( Model, Cmd Msg )
-mapPageWithSubpageMsg model ( m, cmds ) =
-    ( { model | page = PageWithSubpage m }, Cmd.map PageWithSubpageMsg cmds )
 
 
 mapAboutPageMsg : Model -> ( AboutPage.Model, Cmd AboutPage.Msg ) -> ( Model, Cmd Msg )
@@ -469,14 +431,8 @@ extractSession model =
         Top m ->
             m.session
 
-        PageOne m ->
-            m.session
-
         -- NewPage m ->
         -- m.session
-        PageWithSubpage m ->
-            m.session
-
         AboutPage m ->
             m.session
 
@@ -525,14 +481,8 @@ updateSession model session =
         Top m ->
             mapTopMsg model (Top.init session)
 
-        PageOne m ->
-            mapPageOneMsg model (PageOne.init session)
-
         -- NewPage m ->
         -- mapNewPageMsg model (NewPage.init session)
-        PageWithSubpage m ->
-            mapPageWithSubpageMsg model (PageWithSubpage.init session m.subpage)
-
         AboutPage m ->
             mapAboutPageMsg model (AboutPage.init session)
 
