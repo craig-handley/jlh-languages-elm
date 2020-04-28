@@ -21,5 +21,8 @@
   "homepage": "https://github.com/jzxhuang/elm-spa-boilerplate#readme",
   "devDependencies": {
     "create-elm-app": "^2.2.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
