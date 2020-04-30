@@ -47,12 +47,6 @@
             "time": "1.30 - 3.00pm",
             "location": "Cannock Library, WS11 1AA",
             "abilityLevel": "Mixed Ability French"
-        },
-        {
-            "day": "Sat",
-            "time": "Test",
-            "location": "Home",
-            "abilityLevel": "All"
         }
     ]
 }
