@@ -2,6 +2,7 @@ module Session exposing (Session, init)
 
 import Json.Decode
 import Time
+import Type.Course as Course
 import Type.Flags
 import Type.LocalStorage
 
@@ -74,6 +75,7 @@ type alias Session =
         , gallery_29 : String
         , gallery_30 : String
         }
+    , courses : Maybe (List Course.Course)
     }
 
 
@@ -89,13 +91,26 @@ init flags =
 
         posixTime =
             Time.millisToPosix flags.timeAppStarted
+
+        courseResult =
+            Json.Decode.decodeString Course.coursesDecoder flags.courses
     in
     case localStorage of
         Ok storage ->
-            Session posixTime flags.windowSize storage flags.images
+            case courseResult of
+                Ok courses ->
+                    Session posixTime flags.windowSize storage flags.images (Just courses)
+
+                Err _ ->
+                    Session posixTime flags.windowSize storage flags.images Nothing
 
         Err _ ->
-            Session posixTime flags.windowSize Nothing flags.images
+            case courseResult of
+                Ok courses ->
+                    Session posixTime flags.windowSize Nothing flags.images (Just courses)
+
+                Err _ ->
+                    Session posixTime flags.windowSize Nothing flags.images Nothing
 
 
 

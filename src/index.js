@@ -57,6 +57,7 @@ import gallery_27 from './img/gallery_27.jpg';
 import gallery_28 from './img/gallery_28.jpg';
 import gallery_29 from './img/gallery_29.jpg';
 import gallery_30 from './img/gallery_30.jpg';
+import courses from './json/courses.json';
 
 
 
@@ -135,7 +136,7 @@ function generateFlags() {
       gallery_28,
       gallery_29,
       gallery_30,
-    }
+    }, courses: JSON.stringify(courses),
   };
 }
 

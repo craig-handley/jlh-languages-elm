@@ -4,6 +4,7 @@ import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Session
+import Type.Course exposing (Course)
 import Viewer
 
 
@@ -44,72 +45,48 @@ update msg model =
 -- VIEW
 
 
+viewCourses : Model -> Html Msg
+viewCourses model =
+    case model.session.courses of
+        Just courses ->
+            table []
+                ([ viewTableHeader ] ++ List.map viewCourse courses)
+
+        Nothing ->
+            table [] []
+
+
+viewTableHeader : Html Msg
+viewTableHeader =
+    thead []
+        [ tr []
+            [ th [] [ text "Date" ]
+            , th [] [ text "Time" ]
+            , th [] [ text "Venue" ]
+            , th [] [ text "Details" ]
+            ]
+        ]
+
+
+viewCourse : Course -> Html Msg
+viewCourse course =
+    tbody []
+        [ tr []
+            [ td [] [ text course.day ]
+            , td [] [ text course.time ]
+            , td [] [ text course.location ]
+            , td [] [ text course.abilityLevel ]
+            ]
+        ]
+
+
 view : Model -> Viewer.Details Msg
 view model =
     { title = toTitle
     , body =
         [ div [ class "content" ]
             [ div [ class "heading" ] [ text "Current Courses" ]
-            , table []
-                [ thead []
-                    [ tr []
-                        [ th [] [ text "Date" ]
-                        , th [] [ text "Time" ]
-                        , th [] [ text "Venue" ]
-                        , th [] [ text "Details" ]
-                        ]
-                    ]
-                , tbody []
-                    [ tr []
-                        [ td [] [ text "Monday" ]
-                        , td [] [ text "1.30 - 3.00pm" ]
-                        , td [] [ text "Haling Dene Centre, Penkridge, ST19 5DT" ]
-                        , td [] [ text "Beginners / Mixed Ability" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Tuesday" ]
-                        , td [] [ text "2.00 - 3.00pm" ]
-                        , td [] [ text "Caffe Del Nino, Cannock, WS11 1GR" ]
-                        , td [] [ text "Advanced conversation *" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Wednesday" ]
-                        , td [] [ text "12.00 - 1.30pm" ]
-                        , td [] [ text "Cannock Library, WS11 1AA" ]
-                        , td [] [ text "Beginners / Mixed Ability" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Wednesday" ]
-                        , td [] [ text "1.30 - 3.00pm" ]
-                        , td [] [ text "Cannock Library, WS11 1AA" ]
-                        , td [] [ text "Mixed Ability / Improvers French" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Wednesday" ]
-                        , td [] [ text "3.45 - 5.15pm" ]
-                        , td [] [ text "Cheslyn Hay Village Hall, WS6 7HP" ]
-                        , td [] [ text "Improvers French **" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Thursday" ]
-                        , td [] [ text "1.30 - 3.00pm" ]
-                        , td [] [ text "Burntwood Library, WS7 2BX" ]
-                        , td [] [ text "Beginners / Mixed Ability French" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Thursday" ]
-                        , td [] [ text "7.00 - 8.30pm" ]
-                        , td [] [ text "St. Dominic's School, Brewood, ST19 9BA" ]
-                        , td [] [ text "Beginners / Mixed Ability French" ]
-                        ]
-                    , tr []
-                        [ td [] [ text "Friday" ]
-                        , td [] [ text "1.30 - 3.00pm" ]
-                        , td [] [ text "Cannock Library, WS11 1AA" ]
-                        , td [] [ text "Mixed Ability French" ]
-                        ]
-                    ]
-                ]
+            , viewCourses model
             , div [] [ text "* Advanced Conversation: For fluent or near-fluent speakers of French. Come along and chat or discuss the issues of the day." ]
             , div [] [ text "** Improvers: Learners have a sound grasp of French grammar and want to improve their spoken French in order to communicate effectively in the language." ]
             , div [] [ text "First session free." ]

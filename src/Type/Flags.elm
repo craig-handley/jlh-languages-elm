@@ -68,4 +68,5 @@ type alias Flags =
         , gallery_29 : String
         , gallery_30 : String
         }
+    , courses : String
     }

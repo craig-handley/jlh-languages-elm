@@ -1,0 +1,52 @@
+{
+    "courses": [
+        {
+            "day": "Monday",
+            "time": "1.30 - 3.00pm",
+            "location": "Haling Dene Centre, Penkridge, ST19 5DT",
+            "abilityLevel": "Beginners / Mixed Ability"
+        },
+        {
+            "day": "Tuesday",
+            "time": "2.00 - 3.00pm",
+            "location": "Caffe Del Nino, Cannock, WS11 1GR",
+            "abilityLevel": "Advanced conversation *"
+        },
+        {
+            "day": "Wednesday",
+            "time": "12.00 - 1.30pm",
+            "location": "Cannock Library, WS11 1AA",
+            "abilityLevel": "Beginners / Mixed Ability"
+        },
+        {
+            "day": "Wednesday",
+            "time": "1.30 - 3.00pm",
+            "location": "Cannock Library, WS11 1AA",
+            "abilityLevel": "Mixed Ability / Improvers French"
+        },
+        {
+            "day": "Wednesday",
+            "time": "3.45 - 5.15pm",
+            "location": "Cheslyn Hay Village Hall, WS6 7HP",
+            "abilityLevel": "Improvers French **"
+        },
+        {
+            "day": "Thursday",
+            "time": "1.30 - 3.00pm",
+            "location": "Burntwood Library, WS7 2BX",
+            "abilityLevel": "Beginners / Mixed Ability French"
+        },
+        {
+            "day": "Thursday",
+            "time": "7.00 - 8.30pm",
+            "location": "St. Dominic's School, Brewood, ST19 9BA",
+            "abilityLevel": "Beginners / Mixed Ability French"
+        },
+        {
+            "day": "Friday",
+            "time": "1.30 - 3.00pm",
+            "location": "Cannock Library, WS11 1AA",
+            "abilityLevel": "Mixed Ability French"
+        }
+    ]
+}
